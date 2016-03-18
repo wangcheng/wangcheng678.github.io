@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Document</title>
+	<link rel="stylesheet" href="styles/style.css">
+</head>
+<body></div>
+  <script src="iscroll-master/build/iscroll.js"></script>
+
+	<div class="value-wrappr">
+		<div id="value1"></div>
+		<div id="value2"></div>
+		<div id="value3"></div>
+		<div id="value4"></div>
+	</div>
+	<div id="wrapper">
+		<div id="scroller1" class="window">
+			<ol class="wheel">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ol>
+		</div>
+		<div id="scroller2" class="window">
+			<ol class="wheel">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ol>
+		</div>
+		<div id="scroller3" class="window">
+			<ol class="wheel">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ol>
+		</div>
+		<div id="scroller4" class="window">
+			<ol class="wheel">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ol>
+		</div>
+	</div>
+	<script>
+
+		function initScroller(target, valueBind, itemSelector){
+
+			var item = itemSelector || '.wheel > li';
+			var wheel = document.querySelectorAll(item);
+			var value = document.querySelector(valueBind);
+
+			var myScroll = new IScroll(target ,{
+					snap: true
+			});
+
+			function setValue(){
+				var page = myScroll.currentPage.pageY;
+				value.textContent = wheel[page].textContent;
+			}
+
+			setValue();
+
+			myScroll.on('scrollEnd', setValue);
+
+			return myScroll;
+
+		}
+
+
+		initScroller('#scroller1', '#value1');
+		initScroller('#scroller2', '#value2');
+		initScroller('#scroller3', '#value3');
+		initScroller('#scroller4', '#value4');
+
+
+
+	</script>
+
+</body>
+</html>

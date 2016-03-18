@@ -1,0 +1,40 @@
+#wrapper{
+  height: 100px;
+  padding: 100px 0;
+  overflow: hidden;
+  background-color: green;
+  font-size: 0;
+}
+
+.window{
+  display: inline-block;
+  width: 25%;
+  height: 100px;
+  /*overflow: hidden;*/
+  background-color: red;
+}
+
+.wheel{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 80px;
+  line-height: 100px;
+}
+
+.value-wrappr{
+  height: 100px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.value-wrappr > div{
+  vertical-align: top;
+  width: 20%;
+  display: inline-block;
+  height: 100px;
+  font-size: 50px;
+  line-height: 100px;
+  border: black solid 1px;
+}
